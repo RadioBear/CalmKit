@@ -42,6 +42,8 @@ class ViewController: UIViewController {
         scrollView.backgroundColor = UIColor.darkGrayColor()
         self.view = scrollView
         
+        self.p_insertCalmKitView(BRBCalmKitBigDonutAnimator())
+        
         self.p_insertCalmKitView(BRBCalmKitDotDonutAnimator())
         
         self.p_insertCalmKitView(BRBCalmKitWanderingCubesAnimator())
@@ -102,6 +104,8 @@ class ViewController: UIViewController {
         let viewBounds = self.view.bounds
        
         let calmKitView = BRBCalmKitView(withAnimator: animator)
+        calmKitView.calmnessSize = 50
+        calmKitView.sizeToFit()
         calmKitView.center = CGPointMake(viewBounds.midX, viewBounds.midY)
         calmKitView.startAnimating()
         

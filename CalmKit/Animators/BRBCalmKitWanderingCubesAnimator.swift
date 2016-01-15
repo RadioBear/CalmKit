@@ -27,7 +27,7 @@ import UIKit
 
 class BRBCalmKitWanderingCubesAnimator: BRBCalmKitAnimator {
     
-    let degToRad: CGFloat = 0.0174532925;
+    let degToRad: CGFloat = 0.0174532925
     
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
         let beginTime = CACurrentMediaTime()

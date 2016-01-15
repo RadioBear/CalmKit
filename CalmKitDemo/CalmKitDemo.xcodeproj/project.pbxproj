@@ -29,6 +29,7 @@
 		49409F461C4902860077551B /* BRBCalmKitFadingCircleAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F451C4902860077551B /* BRBCalmKitFadingCircleAnimator.swift */; };
 		49409F481C4907B20077551B /* BRBCalmKitFadingCircleAltAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F471C4907B20077551B /* BRBCalmKitFadingCircleAltAnimator.swift */; };
 		49409F4A1C4908780077551B /* BRBCalmKitWanderingCubesAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F491C4908780077551B /* BRBCalmKitWanderingCubesAnimator.swift */; };
+		49409F4C1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F4B1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		49409F451C4902860077551B /* BRBCalmKitFadingCircleAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitFadingCircleAnimator.swift; sourceTree = "<group>"; };
 		49409F471C4907B20077551B /* BRBCalmKitFadingCircleAltAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitFadingCircleAltAnimator.swift; sourceTree = "<group>"; };
 		49409F491C4908780077551B /* BRBCalmKitWanderingCubesAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitWanderingCubesAnimator.swift; sourceTree = "<group>"; };
+		49409F4B1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitBigDonutAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				49409F451C4902860077551B /* BRBCalmKitFadingCircleAnimator.swift */,
 				49409F471C4907B20077551B /* BRBCalmKitFadingCircleAltAnimator.swift */,
 				49409F491C4908780077551B /* BRBCalmKitWanderingCubesAnimator.swift */,
+				49409F4B1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift */,
 			);
 			path = Animators;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				49409F381C48E4840077551B /* BRBCalmKitCircleFlipAnimator.swift in Sources */,
 				49409F161C48DC6A0077551B /* ViewController.swift in Sources */,
 				49409F401C48FA9D0077551B /* BRBCalmKitArcAnimator.swift in Sources */,
+				49409F4C1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift in Sources */,
 				49409F361C48DCB10077551B /* BRBCalmKitView.swift in Sources */,
 				49409F421C48FD630077551B /* BRBCalmKitArcAltAnimator.swift in Sources */,
 				49409F351C48DCB10077551B /* BRBCalmKitAnimator.swift in Sources */,

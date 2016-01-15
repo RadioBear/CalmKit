@@ -31,14 +31,13 @@ class BRBCalmKitArcAltAnimator: BRBCalmKitAnimator {
         let beginTime = CACurrentMediaTime()
         
         let frame: CGRect  = CGRectInset(CGRectMake(0.0, 0.0, size.width, size.height), 2.0, 2.0)
-        let radius: CGFloat = CGRectGetWidth(frame) / 2.0
-        let center: CGPoint = CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame))
+        let radius: CGFloat = frame.width * 0.5
+        let center: CGPoint = CGPointMake(frame.midX, frame.midY)
         
         let arc = CALayer()
         arc.frame           = CGRectMake(0.0, 0.0, size.width, size.height)
         arc.backgroundColor = color.CGColor
         arc.anchorPoint     = CGPointMake(0.5, 0.5)
-        arc.cornerRadius    = CGRectGetWidth(arc.frame) / 2.0
         
         let path = CGPathCreateMutable()
         CGPathAddArc(path, nil, center.x, center.y, radius, 0.0, CGFloat(M_PI) * 2.0, false)
@@ -49,7 +48,6 @@ class BRBCalmKitArcAltAnimator: BRBCalmKitAnimator {
         mask.strokeColor   = UIColor.blackColor().CGColor
         mask.fillColor     = UIColor.clearColor().CGColor
         mask.lineWidth     = 2.0
-        mask.cornerRadius  = frame.size.width / 2.0
         mask.anchorPoint   = CGPointMake(0.5, 0.5)
         
         arc.mask = mask
