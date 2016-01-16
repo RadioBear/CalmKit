@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493903341C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493903331C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift */; };
 		49409F141C48DC6A0077551B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F131C48DC6A0077551B /* AppDelegate.swift */; };
 		49409F161C48DC6A0077551B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F151C48DC6A0077551B /* ViewController.swift */; };
 		49409F1B1C48DC6A0077551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49409F1A1C48DC6A0077551B /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		493903331C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitSpectrumColumnAnimator.swift; sourceTree = "<group>"; };
 		49409F101C48DC6A0077551B /* CalmKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalmKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49409F131C48DC6A0077551B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49409F151C48DC6A0077551B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		49409F261C48DCB10077551B /* Animators */ = {
 			isa = PBXGroup;
 			children = (
+				493903331C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift */,
 				49409F271C48DCB10077551B /* BRBCalmKitBounceAnimator.swift */,
 				49409F281C48DCB10077551B /* BRBCalmKitChasingDotsAnimator.swift */,
 				49409F291C48DCB10077551B /* BRBCalmKitCircleAnimator.swift */,
@@ -223,6 +226,7 @@
 				49409F3A1C48E9F90077551B /* BRBCalmKitPlaneFlipAnimator.swift in Sources */,
 				49409F3E1C48EE660077551B /* BRBCalmKitWordPressAnimator.swift in Sources */,
 				49409F141C48DC6A0077551B /* AppDelegate.swift in Sources */,
+				493903341C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift in Sources */,
 				49409F311C48DCB10077551B /* BRBCalmKitCircleAnimator.swift in Sources */,
 				49409F301C48DCB10077551B /* BRBCalmKitChasingDotsAnimator.swift in Sources */,
 				49409F331C48DCB10077551B /* BRBCalmKitDotDonutAnimator.swift in Sources */,

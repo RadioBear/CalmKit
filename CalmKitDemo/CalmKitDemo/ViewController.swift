@@ -27,7 +27,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
+    var mainScrollView: UIScrollView!
     var numberOfCalmness = 0
     
     override func loadView() {
@@ -41,6 +41,9 @@ class ViewController: UIViewController {
         scrollView.directionalLockEnabled = true
         scrollView.backgroundColor = UIColor.darkGrayColor()
         self.view = scrollView
+        self.mainScrollView = scrollView
+        
+        self.p_insertCalmKitView(BRBCalmKitSpectrumColumnAnimator())
         
         self.p_insertCalmKitView(BRBCalmKitBigDonutAnimator())
         
@@ -81,7 +84,9 @@ class ViewController: UIViewController {
         let backgroundLayer = CAGradientLayer()
         let scrollBounds = self.view.bounds
         let backgroundBounds = CGRectMake(scrollBounds.origin.x, scrollBounds.origin.y, scrollBounds.width * CGFloat(self.numberOfCalmness), scrollBounds.height)
-        backgroundLayer.frame = backgroundBounds
+        backgroundLayer.bounds = backgroundBounds
+        backgroundLayer.anchorPoint = CGPointMake(0, 0)
+        backgroundLayer.position = CGPointMake(0, 0)
         backgroundLayer.colors = [UIColor.orangeColor().CGColor, UIColor.magentaColor().CGColor, UIColor.purpleColor().CGColor]
         backgroundLayer.locations = [0.0, 0.5, 1.0]
         backgroundLayer.startPoint = CGPointMake(0.0, 0.5)
@@ -98,20 +103,49 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @available(iOS 8.0, *)
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        coordinator.animateAlongsideTransition({
+            (context: UIViewControllerTransitionCoordinatorContext) -> Void in
+            self.p_refreshWhenRotationOrientation()
+            }) {
+                (context: UIViewControllerTransitionCoordinatorContext) -> Void in
+                
+                
+        }
+        
+    }
+    
+    @available(iOS, introduced=2.0, deprecated=8.0)
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        super.willAnimateRotationToInterfaceOrientation(toInterfaceOrientation, duration: duration)
+        
+        self.p_refreshWhenRotationOrientation()
+    }
 
 
     private func p_insertCalmKitView(animator : BRBCalmKitAnimator) {
+        let parentView = self.view
         let viewBounds = self.view.bounds
+        
+        let panel = UIView(frame: CGRectOffset(viewBounds, viewBounds.width * CGFloat(self.numberOfCalmness), 0.0))
+        panel.backgroundColor = UIColor.clearColor()
+        panel.translatesAutoresizingMaskIntoConstraints = false
        
         let calmKitView = BRBCalmKitView(withAnimator: animator)
         calmKitView.calmnessSize = 50
         calmKitView.sizeToFit()
         calmKitView.center = CGPointMake(viewBounds.midX, viewBounds.midY)
+        calmKitView.translatesAutoresizingMaskIntoConstraints = false
         calmKitView.startAnimating()
         
-        let panel = UIView(frame: CGRectOffset(viewBounds, viewBounds.width * CGFloat(self.numberOfCalmness), 0.0))
-        panel.backgroundColor = UIColor.clearColor()
         panel.addSubview(calmKitView)
+        panel.addConstraint(NSLayoutConstraint(item: calmKitView, attribute: .CenterX, relatedBy: .Equal, toItem: panel, attribute: .CenterX, multiplier: 1, constant: 0))
+        panel.addConstraint(NSLayoutConstraint(item: calmKitView, attribute: .CenterY, relatedBy: .Equal, toItem: panel, attribute: .CenterY, multiplier: 1, constant: 0))
         
         let label = UILabel(frame: CGRectMake(0, 50.0, viewBounds.width, 30.0))
         label.text = String(animator.dynamicType)
@@ -119,13 +153,44 @@ class ViewController: UIViewController {
         label.textColor = UIColor.whiteColor()
         label.textAlignment = .Center
         label.adjustsFontSizeToFitWidth = true
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = UIColor.clearColor()
         
         panel.addSubview(label)
+        panel.addConstraint(NSLayoutConstraint(item: label, attribute: .CenterX, relatedBy: .Equal, toItem: panel, attribute: .CenterX, multiplier: 1, constant: 0))
+        panel.addConstraint(NSLayoutConstraint(item: label, attribute: .Top, relatedBy: .Equal, toItem: panel, attribute: .Top, multiplier: 1, constant: 50))
+        panel.addConstraint(NSLayoutConstraint(item: label, attribute: .Width, relatedBy: .Equal, toItem: panel, attribute: .Width, multiplier: 1, constant: 0))
         
-        self.view.addSubview(panel)
+        let lastView = parentView.subviews.last
+        parentView.addSubview(panel)
+        parentView.addConstraint(NSLayoutConstraint(item: panel, attribute: .Width, relatedBy: .Equal, toItem: parentView, attribute: .Width, multiplier: 1, constant: 0))
+        parentView.addConstraint(NSLayoutConstraint(item: panel, attribute: .Height, relatedBy: .Equal, toItem: parentView, attribute: .Height, multiplier: 1, constant: 0))
+        if parentView.subviews.count > 0 && lastView != nil {
+            parentView.addConstraint(NSLayoutConstraint(item: panel, attribute: .Left, relatedBy: .Equal, toItem: lastView, attribute: .Right, multiplier: 1, constant: 0))
+        } else {
+            parentView.addConstraint(NSLayoutConstraint(item: panel, attribute: .Left, relatedBy: .Equal, toItem: parentView, attribute: .Left, multiplier: 1, constant: 0))
+        }
         
         ++self.numberOfCalmness
+    }
+    
+    
+    private func p_refreshWhenRotationOrientation() {
+        let oldPageSize = self.mainScrollView.contentSize.width / CGFloat(self.numberOfCalmness)
+        let pageIndex = floor(self.mainScrollView.contentOffset.x / oldPageSize)
+        
+        let viewBounds = self.mainScrollView.bounds
+        self.mainScrollView.contentSize = CGSizeMake(CGFloat(self.numberOfCalmness) * viewBounds.width, viewBounds.height)
+        let newPageSize = viewBounds.width
+        self.mainScrollView.contentOffset.x = newPageSize * pageIndex
+        
+        if let backgroundLayer = self.mainScrollView.layer.sublayers?.first {
+            let scrollBounds = self.view.bounds
+            let backgroundBounds = CGRectMake(scrollBounds.origin.x, scrollBounds.origin.y, scrollBounds.width * CGFloat(self.numberOfCalmness), scrollBounds.height)
+            backgroundLayer.bounds = backgroundBounds
+            backgroundLayer.anchorPoint = CGPointMake(0, 0)
+            backgroundLayer.position = CGPointMake(0, 0)
+        }
     }
 }
 
