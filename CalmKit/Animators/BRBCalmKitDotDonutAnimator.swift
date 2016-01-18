@@ -73,8 +73,8 @@ class BRBCalmKitDotDonutAnimator: BRBCalmKitAnimator {
             calmnessOpacityAnim.timingFunctions = [
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
-                CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
-                CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
             ]
             
             calmnessOpacityAnim.values = [0.0, 1.0, 1.0, 1.0]
@@ -110,13 +110,13 @@ class BRBCalmKitDotDonutAnimator: BRBCalmKitAnimator {
             maskAnim.repeatCount = HUGE
             maskAnim.duration = totalDuration
             maskAnim.beginTime = beginTime + (increaseTime * Double(i))
-            maskAnim.keyTimes = [0.0, 0.4, 0.6, 1.0]
+            maskAnim.keyTimes = [0.0, 0.4, 0.5, 1.0]
             
             maskAnim.timingFunctions = [
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
             ]
             
             maskAnim.values = [orgMaskPath, orgMaskPath, beginMaskPath, endMaskPath]

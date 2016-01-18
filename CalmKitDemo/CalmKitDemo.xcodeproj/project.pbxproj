@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		493903341C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493903331C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift */; };
+		4939033A1C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493903391C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift */; };
+		4939033C1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939033B1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift */; };
+		493B28D61C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B28D51C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift */; };
 		49409F141C48DC6A0077551B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F131C48DC6A0077551B /* AppDelegate.swift */; };
 		49409F161C48DC6A0077551B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F151C48DC6A0077551B /* ViewController.swift */; };
 		49409F1B1C48DC6A0077551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49409F1A1C48DC6A0077551B /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 
 /* Begin PBXFileReference section */
 		493903331C4A877E00E7BE50 /* BRBCalmKitSpectrumColumnAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitSpectrumColumnAnimator.swift; sourceTree = "<group>"; };
+		493903391C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBAngularGradientLayer.swift; sourceTree = "<group>"; };
+		4939033B1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitFadingRingAnimator.swift; sourceTree = "<group>"; };
+		493B28D51C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitPairFadingRingAnimator.swift; sourceTree = "<group>"; };
 		49409F101C48DC6A0077551B /* CalmKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalmKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49409F131C48DC6A0077551B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49409F151C48DC6A0077551B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493903381C4B7DA200E7BE50 /* AngularGradientLayer */ = {
+			isa = PBXGroup;
+			children = (
+				493903391C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift */,
+			);
+			name = AngularGradientLayer;
+			path = ../../AngularGradientLayer;
+			sourceTree = "<group>";
+		};
 		49409F071C48DC6A0077551B = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +107,7 @@
 		49409F121C48DC6A0077551B /* CalmKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				493903381C4B7DA200E7BE50 /* AngularGradientLayer */,
 				49409F251C48DCB10077551B /* CalmKit */,
 				49409F131C48DC6A0077551B /* AppDelegate.swift */,
 				49409F151C48DC6A0077551B /* ViewController.swift */,
@@ -134,6 +150,8 @@
 				49409F471C4907B20077551B /* BRBCalmKitFadingCircleAltAnimator.swift */,
 				49409F491C4908780077551B /* BRBCalmKitWanderingCubesAnimator.swift */,
 				49409F4B1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift */,
+				4939033B1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift */,
+				493B28D51C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift */,
 			);
 			path = Animators;
 			sourceTree = "<group>";
@@ -212,6 +230,8 @@
 				49409F2F1C48DCB10077551B /* BRBCalmKitBounceAnimator.swift in Sources */,
 				49409F381C48E4840077551B /* BRBCalmKitCircleFlipAnimator.swift in Sources */,
 				49409F161C48DC6A0077551B /* ViewController.swift in Sources */,
+				4939033C1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift in Sources */,
+				4939033A1C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift in Sources */,
 				49409F401C48FA9D0077551B /* BRBCalmKitArcAnimator.swift in Sources */,
 				49409F4C1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift in Sources */,
 				49409F361C48DCB10077551B /* BRBCalmKitView.swift in Sources */,
@@ -222,6 +242,7 @@
 				49409F321C48DCB10077551B /* BRBCalmKitCubeGridAnimator.swift in Sources */,
 				49409F441C4901400077551B /* BRBCalmKitPulseAnimator.swift in Sources */,
 				49409F4A1C4908780077551B /* BRBCalmKitWanderingCubesAnimator.swift in Sources */,
+				493B28D61C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift in Sources */,
 				49409F3C1C48EC800077551B /* BRBCalmKitWaveAnimator.swift in Sources */,
 				49409F3A1C48E9F90077551B /* BRBCalmKitPlaneFlipAnimator.swift in Sources */,
 				49409F3E1C48EE660077551B /* BRBCalmKitWordPressAnimator.swift in Sources */,

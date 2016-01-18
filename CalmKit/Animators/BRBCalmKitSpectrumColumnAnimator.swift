@@ -52,7 +52,7 @@ class BRBCalmKitSpectrumColumnAnimator: BRBCalmKitAnimator {
             let columnLayer = CALayer()
             columnLayer.anchorPoint = CGPointMake(0.5, 1.0)
             columnLayer.frame = CGRectMake(curX, 0.0, columnWidth, size.height * columnsHeightRate[i])
-            columnLayer.position = CGPointMake(columnLayer.position.x, 0.0)
+            columnLayer.position = CGPointMake(columnLayer.position.x, size.height)
             columnLayer.backgroundColor = color.CGColor
             columnLayer.shouldRasterize = true
             layer.addSublayer(columnLayer)
