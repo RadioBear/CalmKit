@@ -43,6 +43,8 @@ class ViewController: UIViewController {
         self.view = scrollView
         self.mainScrollView = scrollView
         
+        self.p_insertCalmKitView(BRBCalmKitDropBallAnimator())
+        
         self.p_insertCalmKitView(BRBCalmKitDoubleArcAnimator())
         
         self.p_insertCalmKitView(BRBCalmKitPairFadingRingAnimator())

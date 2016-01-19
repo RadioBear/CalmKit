@@ -42,6 +42,8 @@ class BRBCalmKitDoubleArcAnimator: BRBCalmKitAnimator {
         arc.frame = CGRectMake(0.0, 0.0, size.width, size.height)
         arc.backgroundColor = color.CGColor
         arc.anchorPoint = CGPointMake(0.5, 0.5)
+        arc.shouldRasterize      = true
+        arc.rasterizationScale   = UIScreen.mainScreen().scale
         
         let path = CGPathCreateMutable()
         CGPathAddRelativeArc(path, nil, center.x, center.y, radius, p_degToRad(20.0), p_degToRad(140.0))

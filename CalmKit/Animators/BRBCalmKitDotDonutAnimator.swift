@@ -32,6 +32,10 @@ class BRBCalmKitDotDonutAnimator: BRBCalmKitAnimator {
     
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
         
+        if circleCount <= 0 {
+            return ;
+        }
+        
         let beginTime = CACurrentMediaTime()
         
         let offset: CGFloat = size.width / CGFloat((circleCount * 2) + (circleCount - 1))
@@ -50,19 +54,21 @@ class BRBCalmKitDotDonutAnimator: BRBCalmKitAnimator {
             
             let calmnessScaleAnim = CAKeyframeAnimation(keyPath: "transform")
 
-            calmnessScaleAnim.keyTimes = [0.0, 0.4, 0.6, 1.0]
+            calmnessScaleAnim.keyTimes = [0.0, 0.4, 0.6, 0.8, 1.0]
 
             calmnessScaleAnim.timingFunctions = [
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
-                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
+                CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut),
             ]
             
             calmnessScaleAnim.values = [
                 NSValue(CATransform3D: CATransform3DMakeScale(0.0, 0.0, 0.0)),
                 NSValue(CATransform3D: CATransform3DMakeScale(0.5, 0.5, 0.0)),
                 NSValue(CATransform3D: CATransform3DMakeScale(0.5, 0.5, 0.0)),
+                NSValue(CATransform3D: CATransform3DMakeScale(1.0, 1.0, 0.0)),
                 NSValue(CATransform3D: CATransform3DMakeScale(1.0, 1.0, 0.0)),
             ]
             
