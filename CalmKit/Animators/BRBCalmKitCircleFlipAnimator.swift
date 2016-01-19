@@ -52,9 +52,9 @@ class BRBCalmKitCircleFlipAnimator: BRBCalmKitAnimator {
         ]
         
         anim.values = [
-            NSValue(CATransform3D: transform3DRotationWithPerspective(1.0/120.0, 0, 0, 0, 0)),
-            NSValue(CATransform3D: transform3DRotationWithPerspective(1.0/120.0, CGFloat(M_PI), 0.0, 1.0, 0.0)),
-            NSValue(CATransform3D: transform3DRotationWithPerspective(1.0/120.0, CGFloat(M_PI), 0.0, 0.0, 1.0)),
+            NSValue(CATransform3D: p_transform3DRotationWithPerspective(1.0/120.0, 0, 0, 0, 0)),
+            NSValue(CATransform3D: p_transform3DRotationWithPerspective(1.0/120.0, CGFloat(M_PI), 0.0, 1.0, 0.0)),
+            NSValue(CATransform3D: p_transform3DRotationWithPerspective(1.0/120.0, CGFloat(M_PI), 0.0, 0.0, 1.0)),
         ]
         
         circle.addAnimation(anim, forKey:"calmkit-anim")

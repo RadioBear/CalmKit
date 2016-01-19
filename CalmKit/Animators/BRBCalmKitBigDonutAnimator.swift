@@ -26,13 +26,11 @@
 import UIKit
 
 class BRBCalmKitBigDonutAnimator: BRBCalmKitAnimator {
-    
-    let degToRad: Double = 0.0174532925
-    
+
     var circleCount: Int = 8
     var circleWidthRate: CGFloat = 0.15
     var totalDuration: NSTimeInterval = 1.5
-    var paddingDegree: Double = 10.0
+    var paddingDegree: CGFloat = 10.0
     
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
         
@@ -47,7 +45,7 @@ class BRBCalmKitBigDonutAnimator: BRBCalmKitAnimator {
         let radius: CGFloat = frame.width * 0.5
         let center: CGPoint = CGPointMake(frame.midX, frame.midY)
         
-        let circlePaddingRadius: CGFloat = CGFloat(degToRad * paddingDegree)
+        let circlePaddingRadius: CGFloat = p_degToRad(paddingDegree)
         let circleRadius: CGFloat = CGFloat(((2.0 * M_PI) / Double(circleCount))) - circlePaddingRadius
         let increaseTime: NSTimeInterval = totalDuration / Double(circleCount)
         

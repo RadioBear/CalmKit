@@ -27,8 +27,6 @@ import UIKit
 
 class BRBCalmKitWanderingCubesAnimator: BRBCalmKitAnimator {
     
-    let degToRad: CGFloat = 0.0174532925
-    
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
         let beginTime = CACurrentMediaTime()
         let cubeSize: CGFloat = floor(size.width / 3.0)
@@ -61,19 +59,19 @@ class BRBCalmKitWanderingCubesAnimator: BRBCalmKitAnimator {
             let t0 = CATransform3DIdentity
             
             var t1 = CATransform3DMakeTranslation(widthMinusCubeSize, 0.0, 0.0)
-            t1 = CATransform3DRotate(t1, -90.0 * degToRad, 0.0, 0.0, 1.0)
+            t1 = CATransform3DRotate(t1, p_degToRad(-90.0), 0.0, 0.0, 1.0)
             t1 = CATransform3DScale(t1, 0.5, 0.5, 1.0)
             
             var t2 = CATransform3DMakeTranslation(widthMinusCubeSize, widthMinusCubeSize, 0.0)
-            t2 = CATransform3DRotate(t2, -180.0 * degToRad, 0.0, 0.0, 1.0)
+            t2 = CATransform3DRotate(t2, p_degToRad(-180.0), 0.0, 0.0, 1.0)
             t2 = CATransform3DScale(t2, 1.0, 1.0, 1.0)
             
             var t3 = CATransform3DMakeTranslation(0.0, widthMinusCubeSize, 0.0)
-            t3 = CATransform3DRotate(t3, -270.0 * degToRad, 0.0, 0.0, 1.0)
+            t3 = CATransform3DRotate(t3, p_degToRad(-270.0), 0.0, 0.0, 1.0)
             t3 = CATransform3DScale(t3, 0.5, 0.5, 1.0)
             
             var t4 = CATransform3DMakeTranslation(0.0, 0.0, 0.0)
-            t4 = CATransform3DRotate(t4, -360.0 * degToRad, 0.0, 0.0, 1.0)
+            t4 = CATransform3DRotate(t4, p_degToRad(-360.0), 0.0, 0.0, 1.0)
             t4 = CATransform3DScale(t4, 1.0, 1.0, 1.0)
             
             anim.values = [

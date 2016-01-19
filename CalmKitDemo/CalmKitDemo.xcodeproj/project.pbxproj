@@ -11,6 +11,7 @@
 		4939033A1C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493903391C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift */; };
 		4939033C1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4939033B1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift */; };
 		493B28D61C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B28D51C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift */; };
+		493B28D81C4E099400ED43A6 /* BRBCalmKitDoubleArcAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493B28D71C4E099400ED43A6 /* BRBCalmKitDoubleArcAnimator.swift */; };
 		49409F141C48DC6A0077551B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F131C48DC6A0077551B /* AppDelegate.swift */; };
 		49409F161C48DC6A0077551B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49409F151C48DC6A0077551B /* ViewController.swift */; };
 		49409F1B1C48DC6A0077551B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49409F1A1C48DC6A0077551B /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		493903391C4B7DB300E7BE50 /* BRBAngularGradientLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBAngularGradientLayer.swift; sourceTree = "<group>"; };
 		4939033B1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitFadingRingAnimator.swift; sourceTree = "<group>"; };
 		493B28D51C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitPairFadingRingAnimator.swift; sourceTree = "<group>"; };
+		493B28D71C4E099400ED43A6 /* BRBCalmKitDoubleArcAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BRBCalmKitDoubleArcAnimator.swift; sourceTree = "<group>"; };
 		49409F101C48DC6A0077551B /* CalmKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalmKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49409F131C48DC6A0077551B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49409F151C48DC6A0077551B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				49409F4B1C4922B70077551B /* BRBCalmKitBigDonutAnimator.swift */,
 				4939033B1C4BE6CB00E7BE50 /* BRBCalmKitFadingRingAnimator.swift */,
 				493B28D51C4CA35300ED43A6 /* BRBCalmKitPairFadingRingAnimator.swift */,
+				493B28D71C4E099400ED43A6 /* BRBCalmKitDoubleArcAnimator.swift */,
 			);
 			path = Animators;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49409F341C48DCB10077551B /* BRBCalmKitSideBounceAnimator.swift in Sources */,
+				493B28D81C4E099400ED43A6 /* BRBCalmKitDoubleArcAnimator.swift in Sources */,
 				49409F2F1C48DCB10077551B /* BRBCalmKitBounceAnimator.swift in Sources */,
 				49409F381C48E4840077551B /* BRBCalmKitCircleFlipAnimator.swift in Sources */,
 				49409F161C48DC6A0077551B /* ViewController.swift in Sources */,

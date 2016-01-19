@@ -1,5 +1,5 @@
 //
-//  BRBCalmKitFadingRingAnimator.swift
+//  BRBCalmKitDoubleArcAnimator.swift
 //  CalmKit
 //
 // Copyright (c) 2016 RadioBear
@@ -25,46 +25,52 @@
 
 import UIKit
 
-class BRBCalmKitFadingRingAnimator: BRBCalmKitAnimator {
+class BRBCalmKitDoubleArcAnimator: BRBCalmKitAnimator {
     
-    var circleWidthRate: CGFloat = 0.1
+    var arcWidthRate: CGFloat = 0.05
     var totalDuration: NSTimeInterval = 1.0
     
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
+        let beginTime = CACurrentMediaTime()
         
-        let circleWidth = size.width * circleWidthRate
-        let frame: CGRect = CGRectInset(CGRectMake(0.0, 0.0, size.width, size.height), circleWidth, circleWidth)
+        let arcWidth = size.width * arcWidthRate
+        let frame: CGRect = CGRectInset(CGRectMake(0.0, 0.0, size.width, size.height), arcWidth, arcWidth)
+        let radius: CGFloat = frame.width * 0.5
+        let center: CGPoint = CGPointMake(frame.midX, frame.midY)
         
-        let circle = CALayer()
-        circle.frame                = CGRectMake(0.0, 0.0, size.width, size.height)
-        circle.anchorPoint          = CGPointMake(0.5, 0.5)
-        circle.backgroundColor      = color.CGColor
-        circle.shouldRasterize      = true
-        circle.rasterizationScale   = UIScreen.mainScreen().scale
+        let arc = CALayer()
+        arc.frame = CGRectMake(0.0, 0.0, size.width, size.height)
+        arc.backgroundColor = color.CGColor
+        arc.anchorPoint = CGPointMake(0.5, 0.5)
         
-        let mask = BRBAngularGradientLayer()
-        mask.frame              = CGRectMake(0.0, 0.0, size.width, size.height)
-        mask.anchorPoint        = CGPointMake(0.5, 0.5)
-        mask.backgroundColor    = UIColor.clearColor().CGColor
-        let beginColor = UIColor.blackColor().CGColor
-        let endColor = UIColor.clearColor().CGColor
-        mask.colors             = [beginColor, endColor]
-        mask.locations          = [0.0, 0.8]
-        mask.path               = CGPathCreateWithEllipseInRect(frame, nil)
-        mask.lineWidth          = circleWidth
+        let path = CGPathCreateMutable()
+        CGPathAddRelativeArc(path, nil, center.x, center.y, radius, p_degToRad(20.0), p_degToRad(140.0))
+        let pathAdd = CGPathCreateMutable()
+        CGPathAddRelativeArc(pathAdd, nil, center.x, center.y, radius, p_degToRad(200.0), p_degToRad(140.0))
+        CGPathAddPath(path, nil, pathAdd)
         
-        circle.mask = mask
-        layer.addSublayer(circle)
+        let mask = CAShapeLayer()
+        mask.frame        = CGRectMake(0.0, 0.0, size.width, size.height)
+        mask.path         = path
+        mask.strokeColor  = UIColor.blackColor().CGColor
+        mask.fillColor    = UIColor.clearColor().CGColor
+        mask.lineWidth    = arcWidth
+        mask.anchorPoint  = CGPointMake(0.5, 0.5)
+        mask.lineCap      = kCALineCapRound
+        
+        arc.mask = mask;
         
         let anim = CAKeyframeAnimation(keyPath: "transform.rotation.z")
         anim.removedOnCompletion = false
         anim.repeatCount = HUGE
         anim.duration = totalDuration
+        anim.beginTime = beginTime
+        anim.timeOffset = NSDate.timeIntervalSinceReferenceDate()
         anim.keyTimes = [0.0, 0.5, 1.0]
         
         anim.values = [0.0, M_PI, M_PI * 2.0]
         
-        circle.addAnimation(anim, forKey:"calmkit-anim")
-
+        layer.addSublayer(arc)
+        arc.addAnimation(anim, forKey:"calmkit-anim")
     }
 }

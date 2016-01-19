@@ -32,7 +32,17 @@ protocol BRBCalmKitAnimator {
 
 extension BRBCalmKitAnimator {
     
-    func transform3DRotationWithPerspective(perspective: CGFloat, _ angle: CGFloat, _ x: CGFloat, _ y: CGFloat, _ z: CGFloat) -> CATransform3D {
+    func p_degToRad(deg: Double) -> Double {
+        let degToRad: Double = 0.0174532925
+        return degToRad * deg
+    }
+    
+    func p_degToRad(deg: CGFloat) -> CGFloat {
+        let degToRad: CGFloat = 0.0174532925
+        return degToRad * deg
+    }
+    
+    func p_transform3DRotationWithPerspective(perspective: CGFloat, _ angle: CGFloat, _ x: CGFloat, _ y: CGFloat, _ z: CGFloat) -> CATransform3D {
         var transform = CATransform3DIdentity
         transform.m34 = perspective;
         return CATransform3DRotate(transform, angle, x, y, z)
