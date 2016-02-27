@@ -43,7 +43,7 @@ class BRBCalmKitView : UIView {
         didSet {
             if let sublayers = self.layer.sublayers {
                 for layer in sublayers {
-                    layer.backgroundColor = self.color.CGColor;
+                    layer.backgroundColor = self.color.CGColor
                 }
             }
         }

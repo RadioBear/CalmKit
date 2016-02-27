@@ -44,7 +44,7 @@ class BRBCalmKitDotDonutAnimator: BRBCalmKitAnimator {
         
         for i in 0..<circleCount {
             let calmness = CALayer()
-            calmness.frame = CGRectMake(CGFloat(i) * 3 * offset, size.height / 2, circleSize, circleSize)
+            calmness.frame = CGRectMake(CGFloat(i) * 3 * offset, (size.height - circleSize) / 2, circleSize, circleSize)
             calmness.anchorPoint = CGPointMake(0.5, 0.5)
             calmness.transform = CATransform3DMakeScale(0.0, 0.0, 0.0)
             calmness.backgroundColor = color.CGColor

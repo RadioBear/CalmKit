@@ -30,8 +30,8 @@ class BRBCalmKitFadingCircleAnimator: BRBCalmKitAnimator {
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
         let beginTime = CACurrentMediaTime()
         
-        let radius: CGFloat =  size.width / 2
         let squareSize: CGFloat = size.width / 6
+        let radius: CGFloat = (size.width / 2) - (squareSize * 0.5)
         
         for i in 0..<12 {
             let square = CALayer()

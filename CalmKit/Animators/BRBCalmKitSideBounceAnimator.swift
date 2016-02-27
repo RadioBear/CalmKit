@@ -40,7 +40,7 @@ class BRBCalmKitSideBounceAnimator: BRBCalmKitAnimator {
         
         for i in 0..<circleCount {
             let circle = CALayer()
-            circle.frame = CGRectMake(CGFloat(i) * 3 * offset, size.height / 2, circleSize, circleSize)
+            circle.frame = CGRectMake(CGFloat(i) * 3 * offset, (size.height - circleSize) / 2, circleSize, circleSize)
             circle.backgroundColor = color.CGColor
             circle.anchorPoint = CGPointMake(0.5, 0.5)
             circle.cornerRadius = CGRectGetHeight(circle.bounds) * 0.5

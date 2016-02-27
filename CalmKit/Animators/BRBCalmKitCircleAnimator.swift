@@ -31,8 +31,8 @@ class BRBCalmKitCircleAnimator: BRBCalmKitAnimator {
         
         let beginTime = CACurrentMediaTime()
         
-        let radius = size.width / 2
         let circleSize = size.width / 4
+        let radius = size.width / 2  - (circleSize * 0.5)
         
         for i in 0..<8 {
             let circle = CALayer()

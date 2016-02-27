@@ -32,13 +32,14 @@ class BRBCalmKitFadingCircleAltAnimator: BRBCalmKitAnimator {
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
         let beginTime = CACurrentMediaTime()
         
-        let radius: CGFloat =  size.width / 2
+        let circleSize: CGFloat = size.width / 4
+        let radius: CGFloat =  size.width / 2 - (circleSize * 0.5)
         
         for i in 0..<12 {
             let circle = CALayer()
             circle.backgroundColor = color.CGColor
             circle.anchorPoint = CGPointMake(0.5, 0.5)
-            circle.frame = CGRectMake(radius + CGFloat(cos(degToRad * (30.0 * Double(i)))) * radius , radius + CGFloat(sin(degToRad * (30.0 * Double(i)))) * radius, radius / 2, radius / 2)
+            circle.frame = CGRectMake(radius + CGFloat(cos(degToRad * (30.0 * Double(i)))) * radius , radius + CGFloat(sin(degToRad * (30.0 * Double(i)))) * radius, circleSize, circleSize)
             circle.shouldRasterize = true
             circle.rasterizationScale = UIScreen.mainScreen().scale
             circle.cornerRadius = circle.bounds.height * 0.5

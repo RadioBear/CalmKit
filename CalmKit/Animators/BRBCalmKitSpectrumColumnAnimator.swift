@@ -28,8 +28,9 @@ import UIKit
 class BRBCalmKitSpectrumColumnAnimator: BRBCalmKitAnimator {
     
     var totalDuration: NSTimeInterval = 1.0
+    // 空位与条型比例
     var columnAndPaddingRate: CGFloat = 1.0 / 2.0
-    var columnsHeightRate = [CGFloat](arrayLiteral: 0.4, 0.35, 0.6, 0.25)
+    var columnsHeightRate = [CGFloat](arrayLiteral: 0.38, 0.32, 0.5, 0.25)
     
     func setupAnimation(inLayer layer : CALayer, withSize size : CGSize, withColor color : UIColor) {
 
@@ -72,7 +73,7 @@ class BRBCalmKitSpectrumColumnAnimator: BRBCalmKitAnimator {
                 CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut),
             ]
             
-            let maxScale = (maxHeightRate + columnsHeightRate[i]) / columnsHeightRate[i]
+            let maxScale = min((maxHeightRate + columnsHeightRate[i]), 1.0) / columnsHeightRate[i]
             anim.values = [
                 1.0,
                 maxScale,
